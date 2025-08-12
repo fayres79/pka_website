@@ -59,7 +59,7 @@
     <div class="container mx-auto px-6 py-8 max-w-5xl">
 
         <!-- Header with Logo, Nav, and Flags -->
-        <header class="flex flex-col md:flex-row md:justify-between md:items-center mb-12">
+        <header class="flex flex-col items-center md:flex-row md:justify-between md:items-center mb-12">
             <!-- Logo -->
             <a href="#" id="logo-link" class="block">
                 <svg width="250" height="100" viewBox="0 0 250 100">
@@ -476,7 +476,8 @@
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             const width = canvas.clientWidth;
             const height = canvas.clientHeight;
-            const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FED766', '#F0B3D5', '#8A89C0', '#2D2D2A', '#F7F7F7'];
+            // New color palette and density
+            const colors = ['#FF6B6B', '#4ECDC4', '#A0C4FF', '#BDB2FF', '#FFD6A5', '#FDFFB6', '#2D2D2A'];
             const splatter = (x, y, radius, color) => {
                 ctx.fillStyle = color;
                 ctx.beginPath();
@@ -493,7 +494,7 @@
             };
             const drip = (color) => {
                 ctx.strokeStyle = color;
-                ctx.lineWidth = Math.random() * 2.5 + 0.5;
+                ctx.lineWidth = Math.random() * 1.5 + 1.0; // Tighter variance: 1.0 to 2.5
                 ctx.beginPath();
                 const startX = Math.random() * width;
                 const startY = Math.random() * height;
@@ -503,7 +504,7 @@
                 ctx.quadraticCurveTo(startX + (Math.random() - 0.5) * 300, startY + (Math.random() - 0.5) * 300, endX, endY);
                 ctx.stroke();
             };
-            const density = Math.floor((width * height) / 1500); 
+            const density = Math.floor((width * height) / 1000); // Increased density
             for (let i = 0; i < density; i++) {
                 splatter(Math.random() * width, Math.random() * height, Math.random() * 2 + 1, colors[Math.floor(Math.random() * colors.length)]);
             }
