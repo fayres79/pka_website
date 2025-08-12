@@ -32,15 +32,15 @@
             display: block;
         }
         .flag-icon {
-            width: 32px;
-            height: 24px;
+            width: 16px; /* Further reduced size */
+            height: 12px; /* Further reduced size */
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 2px;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s;
         }
         .flag-icon:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            box-shadow: 0 0 8px rgba(0,0,0,0.15);
         }
         .font-playfair { font-family: 'Playfair Display', serif; }
         .font-montserrat { font-family: 'Montserrat', sans-serif; }
@@ -52,7 +52,7 @@
     <div class="container mx-auto px-6 py-8 max-w-5xl">
 
         <!-- Header with Logo, Nav, and Flags -->
-        <header class="flex justify-between items-center mb-12">
+        <header class="flex flex-col items-center md:flex-row md:justify-between md:items-center mb-12">
             <!-- Logo -->
             <a href="#" id="logo-link" class="block">
                 <svg width="250" height="100" viewBox="0 0 250 100">
@@ -63,16 +63,16 @@
                 </svg>
             </a>
             
-            <div class="flex flex-col items-end">
+            <div class="flex flex-col items-center mt-8 md:mt-0 md:items-end">
                  <!-- Language Flags -->
-                <div id="language-selector" class="flex justify-end items-center space-x-3 mb-4">
+                <div id="language-selector" class="flex justify-center md:justify-end items-center space-x-3 mb-4">
                     <img src="https://flagcdn.com/w40/us.png" alt="English" class="flag-icon" data-lang="en">
                     <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="flag-icon" data-lang="fr">
                     <img src="https://flagcdn.com/w40/br.png" alt="Português" class="flag-icon" data-lang="pt">
                     <img src="https://flagcdn.com/w40/es.png" alt="Español" class="flag-icon" data-lang="es">
                 </div>
                 <!-- Navigation -->
-                <nav id="main-nav" class="text-center border-y border-gray-200 py-3 flex items-center">
+                <nav id="main-nav" class="text-center py-3 flex items-center">
                     <!-- Navigation links will be injected by JavaScript -->
                 </nav>
             </div>
@@ -103,13 +103,14 @@
 
         const siteContent = {
             en: {
-                nav: { experience: 'Experience', academic: 'Academic' },
+                nav: { experience: 'Litigation Experience', academic: 'Academic Endeavours' },
                 home: {
-                    summary: `The practice of <strong>Priscila Knoll Aymone</strong>, an independent arbitrator with over 20 years of dedicated experience in resolving complex disputes. Specializing in both domestic and international arbitration, she has extensive expertise in ad-hoc proceedings and cases administered by major institutions such as the International Chamber of Commerce (ICC), the Center for Arbitration and Mediation of the Chamber of Commerce Brazil-Canada (CCBC), and the American Chamber of Commerce (AMCHAM).`,
+                    summary: `<strong>Priscila Knoll Aymone</strong> is an independent arbitrator with over 20 years of dedicated experience in resolving complex disputes. Having earned her Master’s Degree in International Law at Université Paris 2 - Pantheon-Assas and Doctorate’s Degree at Universidade de São Paulo, Mrs. Aymone is specialized in both domestic and international arbitration and dispute resolution. She has extensive expertise in ad-hoc proceedings and cases administered by major institutions such as the International Chamber of Commerce (ICC), the Center for Arbitration and Mediation of the Chamber of Commerce Brazil-Canada (CCBC), the American Chamber of Commerce (AMCHAM) among others.`,
                     fluency: "Priscila is fluent in English, French, Portuguese, and Spanish."
                 },
                 experience: {
-                    experienceTitle: 'Litigation Experience',
+                    title: 'Litigation Experience',
+                    experienceTitle: 'Case History',
                     experienceList: [
                         "ICC Arbitration related to the bid of oil and gas fields.",
                         "ICC Arbitration concerning a real estate project in Rio de Janeiro.",
@@ -136,7 +137,14 @@
                     ]
                 },
                 academic: {
-                    title: 'Academic Experience & Publications',
+                    title: 'Academic Endeavours',
+                    academicBackgroundTitle: 'Academic Background',
+                    academicBackgroundList: [
+                        "<strong>LL.M. in Canadian Common Law (2022)</strong>, York University, Toronto, Canada",
+                        "<strong>Doctorate Degree in International Law (2011)</strong>, University of São Paulo – USP, São Paulo, Brazil",
+                        "<strong>Master’s Degree in Private International Law and International Commerce (2005)</strong>, University of Paris II (Panthéon-Assas), Paris, France",
+                        "<strong>Bachelor of Laws (2004)</strong>, Federal University of Rio Grande do Sul (UFRGS), Porto Alegre, Brazil"
+                    ],
                     publicationsTitle: 'Selected Publications & Chapters',
                     publicationsList: [
                         `Review: Event in honor of Emmanuel Gaillard, to be published at <em>Revista Brasileira de Arbitragem</em> (2025).`,
@@ -156,12 +164,13 @@
                 footer: { contact: "For inquiries:" }
             },
             pt: {
-                nav: { experience: 'Experiência', academic: 'Acadêmico' },
+                nav: { experience: 'Experiência em Litígios', academic: 'Atividades Acadêmicas' },
                 home: {
-                    summary: `A prática de <strong>Priscila Knoll Aymone</strong>, árbitra independente com mais de 20 anos de experiência dedicada à resolução de disputas complexas. Especializada em arbitragem doméstica e internacional, possui vasta experiência em procedimentos ad-hoc e casos administrados por importantes instituições como a Câmara de Comércio Internacional (CCI), o Centro de Arbitragem e Mediação da Câmara de Comércio Brasil-Canadá (CCBC) e a Câmara Americana de Comércio (AMCHAM).`,
+                    summary: `<strong>Priscila Knoll Aymone</strong> é uma árbitra independente com mais de 20 anos de experiência dedicada à resolução de disputas complexas. Com Mestrado em Direito Internacional pela Université Paris 2 - Pantheon-Assas e Doutorado pela Universidade de São Paulo, a Dra. Aymone é especializada em arbitragem e resolução de disputas, tanto domésticas quanto internacionais. Ela possui vasta experiência em procedimentos ad-hoc e casos administrados por importantes instituições como a Câmara de Comércio Internacional (CCI), o Centro de Arbitragem e Mediação da Câmara de Comércio Brasil-Canadá (CCBC), a Câmara Americana de Comércio (AMCHAM), entre outras.`,
                     fluency: "Priscila é fluente em português, inglês, francês e espanhol."
                 },
                 experience: {
+                    title: 'Experiência em Resolução de Disputas',
                     experienceTitle: 'Experiência em Litígios',
                     experienceList: [
                         "Arbitragem ICC relacionada à licitação de campos de petróleo e gás.",
@@ -189,7 +198,14 @@
                     ]
                 },
                 academic: {
-                    title: 'Experiência Acadêmica e Publicações',
+                    title: 'Atividades Acadêmicas',
+                    academicBackgroundTitle: 'Formação Acadêmica',
+                    academicBackgroundList: [
+                        "<strong>LL.M. em Canadian Common Law (2022)</strong>, York University, Toronto, Canadá",
+                        "<strong>Doutorado em Direito Internacional (2011)</strong>, Universidade de São Paulo – USP, São Paulo, Brasil",
+                        "<strong>Mestrado em Direito Internacional Privado e Comércio Internacional (2005)</strong>, Universidade de Paris II (Panthéon-Assas), Paris, França",
+                        "<strong>Bacharelado em Direito (2004)</strong>, Universidade Federal do Rio Grande do Sul (UFRGS), Porto Alegre, Brasil"
+                    ],
                     publicationsTitle: 'Publicações e Capítulos Selecionados',
                     publicationsList: [
                         `Resenha: Evento em homenagem a Emmanuel Gaillard, a ser publicado na <em>Revista Brasileira de Arbitragem</em> (2025).`,
@@ -209,12 +225,13 @@
                 footer: { contact: "Para consultas:" }
             },
             fr: {
-                nav: { experience: 'Expérience', academic: 'Académique' },
+                nav: { experience: 'Expérience en contentieux', academic: 'Activités académiques' },
                 home: {
-                    summary: `Le cabinet de <strong>Priscila Knoll Aymone</strong>, arbitre indépendante avec plus de 20 ans d'expérience dédiée à la résolution de litiges complexes. Spécialisée dans l'arbitrage national et international, elle possède une vaste expertise dans les procédures ad hoc et les cas administrés par des institutions majeures telles que la Chambre de Commerce Internationale (CCI), le Centre d'Arbitrage et de Médiation de la Chambre de Commerce Brésil-Canada (CCBC), et la Chambre de Commerce Américaine (AMCHAM).`,
+                    summary: `<strong>Priscila Knoll Aymone</strong> est une arbitre indépendante avec plus de 20 ans d'expérience dédiée à la résolution de litiges complexes. Titulaire d'un Master en Droit International de l'Université Paris 2 - Panthéon-Assas et d'un Doctorat de l'Universidade de São Paulo, Mme Aymone est spécialisée en arbitrage et en résolution de litiges, tant nationaux qu'internationaux. Elle possède une vaste expertise dans les procédures ad hoc et les cas administrés par des institutions majeures telles que la Chambre de Commerce Internationale (CCI), le Centre d'Arbitrage et de Médiation de la Chambre de Commerce Brésil-Canada (CCBC), la Chambre de Commerce Américaine (AMCHAM), entre autres.`,
                     fluency: "Priscila maîtrise le français, l'anglais, le portugais et l'espagnol."
                 },
                 experience: {
+                    title: 'Expérience en Résolution de Litiges',
                     experienceTitle: 'Expérience en contentieux',
                     experienceList: [
                         "Arbitrage CCI relatif à l'appel d'offres pour des champs pétroliers et gaziers.",
@@ -242,7 +259,14 @@
                     ]
                 },
                 academic: {
-                    title: 'Expérience académique et publications',
+                    title: 'Activités académiques',
+                    academicBackgroundTitle: 'Formation académique',
+                    academicBackgroundList: [
+                        "<strong>LL.M. en Droit Commun Canadien (2022)</strong>, York University, Toronto, Canada",
+                        "<strong>Doctorat en Droit International (2011)</strong>, Université de São Paulo – USP, São Paulo, Brésil",
+                        "<strong>Master en Droit International Privé et Commerce International (2005)</strong>, Université Paris II (Panthéon-Assas), Paris, France",
+                        "<strong>Licence en Droit (2004)</strong>, Université Fédérale du Rio Grande do Sul (UFRGS), Porto Alegre, Brésil"
+                    ],
                     publicationsTitle: 'Publications et chapitres sélectionnés',
                     publicationsList: [
                         `Compte rendu : Événement en l'honneur d'Emmanuel Gaillard, à paraître dans la <em>Revista Brasileira de Arbitragem</em> (2025).`,
@@ -262,12 +286,13 @@
                 footer: { contact: "Pour les demandes:" }
             },
             es: {
-                nav: { experience: 'Experiencia', academic: 'Académico' },
+                nav: { experience: 'Experiencia en Litigios', academic: 'Actividades Académicas' },
                 home: {
-                    summary: `La práctica de <strong>Priscila Knoll Aymone</strong>, árbitra independiente con más de 20 años de experiencia dedicada a la resolución de disputas complejas. Especializada en arbitraje nacional e internacional, cuenta con una amplia experiencia en procedimientos ad-hoc y casos administrados por importantes institutions como la Cámara de Comercio Internacional (CCI), el Centro de Arbitraje y Mediación de la Cámara de Comercio Brasil-Canadá (CCBC) y la Cámara de Comercio Americana (AMCHAM).`,
+                    summary: `<strong>Priscila Knoll Aymone</strong> es una árbitra independiente con más de 20 años de experiencia dedicada a la resolución de disputas complejas. Con un Máster en Derecho Internacional por la Université Paris 2 - Panthéon-Assas y un Doctorado por la Universidade de São Paulo, la Sra. Aymone se especializa en arbitraje y resolución de disputas, tanto nacionales como internacionales. Posee una amplia experiencia en procedimientos ad-hoc y casos administrados por importantes instituciones como la Cámara de Comercio Internacional (CCI), el Centro de Arbitraje y Mediación de la Cámara de Comercio Brasil-Canadá (CCBC), la Cámara de Comercio Americana (AMCHAM), entre otras.`,
                     fluency: "Priscila domina el español, inglés, francés y portugués."
                 },
                 experience: {
+                    title: 'Experiencia en Resolución de Disputas',
                     experienceTitle: 'Experiencia en Litigios',
                     experienceList: [
                         "Arbitraje CCI relacionado con la licitación de campos de petróleo y gas.",
@@ -276,7 +301,7 @@
                         "Arbitraje CCI sobre la adquisición de una aerolínea brasileña.",
                         "Arbitraje CCI relacionado con una empresa conjunta en el sector de las telecomunicaciones.",
                         "Arbitraje acelerado CAMARB relacionado con la compra de equipos de ingeniería.",
-                        "Arbitraje SIAC sobre un acuerdo de accionistas, con sede en Singapur.",
+                        "Arbitrage SIAC sobre un acuerdo de accionistas, con sede en Singapur.",
                         "Arbitraje ad hoc relacionado con un proyecto minero bajo un Contrato EPCM en Terranova y Labrador, Canadá.",
                         "Arbitraje CCBC que involucra una cláusula de earn-out en un acuerdo de compraventa de acciones (SPA).",
                         "Arbitraje AMCHAM relacionado con una disputa inmobiliaria."
@@ -295,7 +320,14 @@
                     ]
                 },
                 academic: {
-                    title: 'Experiencia Académica y Publicaciones',
+                    title: 'Actividades Académicas',
+                    academicBackgroundTitle: 'Formación Académica',
+                    academicBackgroundList: [
+                        "<strong>LL.M. en Derecho Común Canadiense (2022)</strong>, York University, Toronto, Canadá",
+                        "<strong>Doctorado en Derecho Internacional (2011)</strong>, Universidad de São Paulo – USP, São Paulo, Brasil",
+                        "<strong>Máster en Derecho Internacional Privado y Comercio Internacional (2005)</strong>, Universidad de París II (Panthéon-Assas), París, Francia",
+                        "<strong>Licenciatura en Derecho (2004)</strong>, Universidad Federal de Rio Grande do Sul (UFRGS), Porto Alegre, Brasil"
+                    ],
                     publicationsTitle: 'Publicaciones y Capítulos Selecionados',
                     publicationsList: [
                         `Reseña: Evento en honor de Emmanuel Gaillard, que se publicará en la <em>Revista Brasileira de Arbitragem</em> (2025).`,
@@ -347,6 +379,7 @@
                     <div class="my-12 md:my-16">
                         <canvas class="pollock-separator" style="width: 100%; height: 120px;"></canvas>
                     </div>
+                    <h2 class="text-3xl font-bold text-center mb-12 tracking-wider">${content.experience.title}</h2>
                     <div class="flex flex-wrap -mx-4">
                         <div class="w-full md:w-2/3 px-4">
                              <h3 class="font-semibold text-xl mb-4">${content.experience.experienceTitle}</h3>
@@ -357,7 +390,7 @@
                              <ul class="list-disc list-inside space-y-2 leading-relaxed">${content.experience.listedList.map(item => `<li>${item}</li>`).join('')}</ul>
                         </div>
                         <div class="w-full md:w-1/3 px-4 mt-8 md:mt-0">
-                            <img src="pka_photo_1.jpeg" alt="Priscila Knoll Aymone" class="w-full h-auto max-w-xs mx-auto rounded-lg shadow-lg object-cover">
+                            <img src="pka_photo_1.jpg" alt="Priscila Knoll Aymone" class="w-full h-auto max-w-xs mx-auto rounded-lg shadow-lg object-cover">
                         </div>
                     </div>
                 </div>
@@ -367,6 +400,8 @@
                     </div>
                     <h2 class="text-3xl font-bold text-center mb-12 tracking-wider">${content.academic.title}</h2>
                     <div class="max-w-3xl mx-auto">
+                        <h3 class="font-semibold text-xl mb-4">${content.academic.academicBackgroundTitle}</h3>
+                        <ul class="list-disc list-inside space-y-3 leading-relaxed mb-10">${content.academic.academicBackgroundList.map(item => `<li>${item}</li>`).join('')}</ul>
                         <h3 class="font-semibold text-xl mb-4">${content.academic.publicationsTitle}</h3>
                         <ul class="list-disc list-inside space-y-3 leading-relaxed mb-10">${content.academic.publicationsList.map(item => `<li>${item}</li>`).join('')}</ul>
                         <h3 class="font-semibold text-xl mb-4">${content.academic.teachingTitle}</h3>
